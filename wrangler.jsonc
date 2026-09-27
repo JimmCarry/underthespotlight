@@ -1,0 +1,11 @@
+// Cloudflare Worker, který servíruje sestavený web z frontend/dist.
+// Build (v nastavení Workeru na Cloudflare): cd frontend && npm ci && npm run build
+{
+  "name": "underthespotlight",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./frontend/dist",
+    // Adresy jako /nba/clanky/<slug> obslouží Vue router.
+    "not_found_handling": "single-page-application"
+  }
+}
