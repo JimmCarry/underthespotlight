@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #e9edf0; font-family: "Source Sans 3", "Segoe UI", sans-serif; }
+  a { color: #3c8dbc; text-decoration: none; }
+  a:hover { color: #2f7297; }
+</style>
+</helmet>
+
+<section style="padding: 40px; display: flex; flex-direction: column; gap: 28px;">
+  <div style="max-width: 760px;">
+    <h1 style="font-size: 20px; margin: 0 0 6px; color: #222222;">Domovské stránky lig</h1>
+    <p style="font-size: 14px; line-height: 1.5; margin: 0; color: #5b6b78;">Navazují na rozcestník 4A. <a href="#5a">5a</a> NBA, <a href="#5b">5b</a> NBL. Stejná struktura, liší se barvou. Logo i obrázky článků se vkládají přetažením souboru.</p>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start;">
+
+    <div id="5a" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; background: #222222; color: #ffffff; padding: 3px 9px; border-radius: 3px;">5A</span>
+        <span style="font-size: 13px; color: #5b6b78;">NBA — home</span>
+      </div>
+      <div style="width: 1280px; background: #f4f6f8; border-radius: 6px; overflow: hidden; box-shadow: 0 10px 30px rgba(12,20,28,0.2);">
+        <header style="background: linear-gradient(200deg, #12304e 0%, #0a1b2c 70%); padding: 0 64px; height: 120px; display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 22px;">
+            <div style="width: 64px; height: 72px; flex: none;"><image-slot id="h5a-logo" shape="rect" fit="contain" placeholder="Logo NBA"></image-slot></div>
+            <div style="width: 2px; height: 48px; background: rgba(111,179,220,0.45);"></div>
+            <div style="display: flex; flex-direction: column; gap: 2px;">
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #ffffff;">NBA</div>
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.24em; color: #6fb3dc; text-transform: uppercase;">National Basketball Association</div>
+            </div>
+          </div>
+          <a href="#" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; color: #b9cddd;" style-hover="color: #ffffff;">← Rozcestník</a>
+        </header>
+        <main style="padding: 56px 64px 72px; display: flex; flex-direction: column; gap: 40px;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2px solid #0a1b2c; padding-bottom: 12px;">
+            <h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.02em; text-transform: uppercase; color: #0a1b2c;">Články</h2>
+            <span style="font-size: 15px; color: #5b6b78;">Nejnovější</span>
+          </div>
+          <article style="display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 40px; align-items: center; cursor: pointer;">
+            <div style="aspect-ratio: 16 / 9; border-radius: 4px; overflow: hidden; background: #dde3e8;"><image-slot id="a5a-hero" shape="rect" placeholder="Hlavní foto článku"></image-slot></div>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #3c8dbc;">Hlavní článek</span>
+              <h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.02; color: #0a1b2c; text-wrap: pretty;" style-hover="color: #2f7297;">{{ nba.hero.title }}</h3>
+              <p style="margin: 0; font-size: 18px; line-height: 1.55; color: #3d4a55; text-wrap: pretty;">{{ nba.hero.perex }}</p>
+              <span style="font-size: 14px; color: #6b7a86;">{{ nba.hero.date }}</span>
+            </div>
+          </article>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 32px;">
+            <sc-for list="{{ nba.list }}" as="a" hint-placeholder-count="6">
+              <article style="display: flex; flex-direction: column; gap: 12px; cursor: pointer;">
+                <div style="aspect-ratio: 16 / 10; border-radius: 4px; overflow: hidden; background: #dde3e8;"><image-slot id="{{ a.slot }}" shape="rect" placeholder="Foto článku"></image-slot></div>
+                <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #3c8dbc;">{{ a.tag }}</span>
+                <h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.08; color: #0a1b2c; text-wrap: pretty;" style-hover="color: #2f7297;">{{ a.title }}</h3>
+                <span style="font-size: 14px; color: #6b7a86;">{{ a.date }}</span>
+              </article>
+            </sc-for>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div id="5b" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; background: #222222; color: #ffffff; padding: 3px 9px; border-radius: 3px;">5B</span>
+        <span style="font-size: 13px; color: #5b6b78;">NBL — home</span>
+      </div>
+      <div style="width: 1280px; background: #f7f4f4; border-radius: 6px; overflow: hidden; box-shadow: 0 10px 30px rgba(12,20,28,0.2);">
+        <header style="background: linear-gradient(160deg, #5a1119 0%, #2a070c 70%); padding: 0 64px; height: 120px; display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 22px;">
+            <div style="width: 64px; height: 72px; flex: none;"><image-slot id="h5b-logo" shape="rect" fit="contain" placeholder="Logo NBL"></image-slot></div>
+            <div style="width: 2px; height: 48px; background: rgba(232,160,160,0.45);"></div>
+            <div style="display: flex; flex-direction: column; gap: 2px;">
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #ffffff;">NBL</div>
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.24em; color: #e8a0a0; text-transform: uppercase;">Národní basketbalová liga</div>
+            </div>
+          </div>
+          <a href="#" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; color: #f0cdcd;" style-hover="color: #ffffff;">← Rozcestník</a>
+        </header>
+        <main style="padding: 56px 64px 72px; display: flex; flex-direction: column; gap: 40px;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2px solid #2a070c; padding-bottom: 12px;">
+            <h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.02em; text-transform: uppercase; color: #2a070c;">Články</h2>
+            <span style="font-size: 15px; color: #6b5a5c;">Nejnovější</span>
+          </div>
+          <article style="display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 40px; align-items: center; cursor: pointer;">
+            <div style="aspect-ratio: 16 / 9; border-radius: 4px; overflow: hidden; background: #e6dcdc;"><image-slot id="a5b-hero" shape="rect" placeholder="Hlavní foto článku"></image-slot></div>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #c00000;">Hlavní článek</span>
+              <h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.02; color: #2a070c; text-wrap: pretty;" style-hover="color: #b80000;">{{ nbl.hero.title }}</h3>
+              <p style="margin: 0; font-size: 18px; line-height: 1.55; color: #4a3d3e; text-wrap: pretty;">{{ nbl.hero.perex }}</p>
+              <span style="font-size: 14px; color: #7a6a6c;">{{ nbl.hero.date }}</span>
+            </div>
+          </article>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 32px;">
+            <sc-for list="{{ nbl.list }}" as="a" hint-placeholder-count="6">
+              <article style="display: flex; flex-direction: column; gap: 12px; cursor: pointer;">
+                <div style="aspect-ratio: 16 / 10; border-radius: 4px; overflow: hidden; background: #e6dcdc;"><image-slot id="{{ a.slot }}" shape="rect" placeholder="Foto článku"></image-slot></div>
+                <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #c00000;">{{ a.tag }}</span>
+                <h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.08; color: #2a070c; text-wrap: pretty;" style-hover="color: #b80000;">{{ a.title }}</h3>
+                <span style="font-size: 14px; color: #7a6a6c;">{{ a.date }}</span>
+              </article>
+            </sc-for>
+          </div>
+        </main>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const mk = (p, rows) => rows.map((r, i) => ({ slot: p + i, tag: r[0], title: r[1], date: r[2] }));
+    return {
+      nba: {
+        hero: { title: "Ukázkový titulek hlavního článku o dění v NBA", perex: "Perex hlavního článku — dvě až tři věty, které shrnou, o čem text je, a nalákají ke čtení.", date: "23. 9. 2026" },
+        list: mk("a5a-", [
+          ["Zápasy", "Titulek článku o zápase ze včerejší noci", "23. 9. 2026"],
+          ["Přestupy", "Titulek článku o přestupu nebo výměně hráče", "22. 9. 2026"],
+          ["Statistiky", "Titulek článku se statistikami a čísly týdne", "22. 9. 2026"],
+          ["Rozhovor", "Titulek rozhovoru s hráčem nebo trenérem", "21. 9. 2026"],
+          ["Analýza", "Titulek analytického článku o sezóně", "20. 9. 2026"],
+          ["Zápasy", "Titulek článku o dalším zápase", "19. 9. 2026"]
+        ])
+      },
+      nbl: {
+        hero: { title: "Ukázkový titulek hlavního článku o dění v NBL", perex: "Perex hlavního článku — dvě až tři věty, které shrnou, o čem text je, a nalákají ke čtení.", date: "23. 9. 2026" },
+        list: mk("a5b-", [
+          ["Kolo", "Titulek článku o výsledcích posledního kola", "23. 9. 2026"],
+          ["Kluby", "Titulek článku o dění v klubu", "22. 9. 2026"],
+          ["Přestupy", "Titulek článku o posile týmu", "22. 9. 2026"],
+          ["Reprezentace", "Titulek článku o národním týmu", "21. 9. 2026"],
+          ["Rozhovor", "Titulek rozhovoru s hráčem nebo trenérem", "20. 9. 2026"],
+          ["Mládež", "Titulek článku o mládežnickém basketbalu", "19. 9. 2026"]
+        ])
+      }
+    };
+  }
+}
+
+</script>
+</body>
+</html>

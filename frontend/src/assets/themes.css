@@ -1,0 +1,35 @@
+/* Barevná témata lig (návrh 5A / 5B). */
+
+.theme-nba {
+  --header-top: #12304e;
+  --header-bottom: #0a1b2c;
+  --header-angle: 200deg;
+  --header-divider: rgba(111, 179, 220, .45);
+  --header-label: #6fb3dc;
+  --header-link: #b9cddd;
+  --accent: #3c8dbc;
+  --accent-hover: #2f7297;
+  --heading: #0a1b2c;
+  --copy: #3d4a55;
+  --muted: #6b7a86;
+  --muted-strong: #5b6b78;
+  --page: #f4f6f8;
+  --placeholder: #dde3e8;
+}
+
+.theme-nbl {
+  --header-top: #5a1119;
+  --header-bottom: #2a070c;
+  --header-angle: 160deg;
+  --header-divider: rgba(232, 160, 160, .45);
+  --header-label: #e8a0a0;
+  --header-link: #f0cdcd;
+  --accent: #c00000;
+  --accent-hover: #b80000;
+  --heading: #2a070c;
+  --copy: #4a3d3e;
+  --muted: #7a6a6c;
+  --muted-strong: #6b5a5c;
+  --page: #f7f4f4;
+  --placeholder: #e6dcdc;
+}

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07101a">
+  <title>Basketbal | NBA a NBL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --page: #07101a;
+      --nba-top: #12304e;
+      --nba-bottom: #0a1b2c;
+      --nba-accent: #3c8dbc;
+      --nba-accent-hover: #2f7297;
+      --nba-label: #6fb3dc;
+      --nba-copy: #b9cddd;
+      --nbl-top: #5a1119;
+      --nbl-bottom: #2a070c;
+      --nbl-accent: #e40000;
+      --nbl-accent-hover: #b80000;
+      --nbl-label: #e8a0a0;
+      --nbl-copy: #f0cdcd;
+      --transition: opacity .35s ease, filter .35s ease, background-color .2s ease;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: #fff;
+      font-family: "Source Sans 3", sans-serif;
+    }
+
+    .split {
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 100dvh;
+      min-height: 560px;
+      overflow: hidden;
+      background: var(--page);
+    }
+
+    .panel {
+      position: relative;
+      display: flex;
+      width: 50%;
+      height: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      padding: 96px 72px 56px;
+      text-align: center;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .panel--nba {
+      background: linear-gradient(200deg, var(--nba-top) 0%, var(--nba-bottom) 70%);
+    }
+
+    .panel--nbl {
+      background: linear-gradient(160deg, var(--nbl-top) 0%, var(--nbl-bottom) 70%);
+    }
+
+    .split:has(.panel--nba:hover, .panel--nba:focus-visible) .panel--nbl,
+    .split:has(.panel--nbl:hover, .panel--nbl:focus-visible) .panel--nba {
+      opacity: .3;
+      filter: saturate(.2) brightness(.72);
+    }
+
+    .panel:hover,
+    .panel:focus-visible {
+      opacity: 1;
+      filter: saturate(1.05) brightness(1.02);
+    }
+
+    .panel:focus-visible {
+      outline: 3px solid rgba(255, 255, 255, .9);
+      outline-offset: -8px;
+    }
+
+    .panel__region {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: .28em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .panel--nba .panel__region { color: var(--nba-label); }
+    .panel--nbl .panel__region { color: var(--nbl-label); }
+
+    .panel__league {
+      margin: 0;
+      color: #fff;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(96px, 11.7vw, 168px);
+      font-weight: 700;
+      letter-spacing: -.01em;
+      line-height: .85;
+    }
+
+    .panel__rule {
+      width: 54px;
+      height: 2px;
+      flex: none;
+    }
+
+    .panel--nba .panel__rule { background: rgba(111, 179, 220, .55); }
+    .panel--nbl .panel__rule { background: rgba(232, 160, 160, .55); }
+
+    .panel__description {
+      max-width: 320px;
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .panel--nba .panel__description { color: var(--nba-copy); }
+    .panel--nbl .panel__description { color: var(--nbl-copy); }
+
+    .panel__button {
+      padding: 12px 28px;
+      border-radius: 3px;
+      color: #fff;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: background-color .2s ease;
+    }
+
+    .panel--nba .panel__button { background: var(--nba-accent); }
+    .panel--nba:hover .panel__button,
+    .panel--nba:focus-visible .panel__button { background: var(--nba-accent-hover); }
+    .panel--nbl .panel__button { background: var(--nbl-accent); }
+    .panel--nbl:hover .panel__button,
+    .panel--nbl:focus-visible .panel__button { background: var(--nbl-accent-hover); }
+
+    .masthead {
+      position: absolute;
+      z-index: 2;
+      top: 42px;
+      right: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      pointer-events: none;
+      text-align: center;
+    }
+
+    .masthead__title {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: .34em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .masthead__subtitle {
+      color: rgba(255, 255, 255, .55);
+      font-size: 13px;
+      letter-spacing: .16em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .split__seam {
+      position: absolute;
+      z-index: 1;
+      top: 110px;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: rgba(255, 255, 255, .16);
+      pointer-events: none;
+      transform: translateX(-50%);
+    }
+
+    @media (hover: none) {
+      .split:has(.panel--nba:hover, .panel--nbl:hover) .panel { opacity: 1; filter: none; }
+    }
+
+    @media (max-width: 767px) {
+      .split {
+        display: block;
+        min-height: 100dvh;
+        overflow: auto;
+      }
+
+      .panel {
+        width: 100%;
+        height: 50dvh;
+        min-height: 380px;
+        padding: 112px 28px 48px;
+      }
+
+      .masthead { top: 28px; }
+      .masthead__title { font-size: 20px; }
+      .split__seam { top: 50%; right: 0; bottom: auto; left: 0; width: auto; height: 2px; transform: none; }
+      .panel__league { font-size: clamp(92px, 25vw, 128px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .panel, .panel__button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="split" aria-label="Výběr basketbalové ligy">
+    <div class="masthead" aria-hidden="true">
+      <div class="masthead__title">Basketbal</div>
+      <div class="masthead__subtitle">dvě ligy, jeden web</div>
+    </div>
+
+    <a class="panel panel--nba" href="/nba" aria-label="Vstoupit do NBA">
+      <div class="panel__region">Zámoří</div>
+      <h1 class="panel__league">NBA</h1>
+      <div class="panel__rule" aria-hidden="true"></div>
+      <p class="panel__description">Výsledky, statistiky hráčů a noční přenosy v českém čase.</p>
+      <span class="panel__button">Vstoupit do NBA</span>
+    </a>
+
+    <a class="panel panel--nbl" href="/nbl" aria-label="Vstoupit do NBL">
+      <div class="panel__region">Česko</div>
+      <h2 class="panel__league">NBL</h2>
+      <div class="panel__rule" aria-hidden="true"></div>
+      <p class="panel__description">Tabulky, soupisky, přestupy a play-off české ligy.</p>
+      <span class="panel__button">Vstoupit do NBL</span>
+    </a>
+
+    <div class="split__seam" aria-hidden="true"></div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,307 @@
+:root {
+  --content-max: 1280px;
+}
+
+.theme-nba {
+  --header-top: #12304e;
+  --header-bottom: #0a1b2c;
+  --header-angle: 200deg;
+  --header-divider: rgba(111, 179, 220, .45);
+  --header-label: #6fb3dc;
+  --header-link: #b9cddd;
+  --accent: #3c8dbc;
+  --accent-hover: #2f7297;
+  --heading: #0a1b2c;
+  --copy: #3d4a55;
+  --muted: #6b7a86;
+  --muted-strong: #5b6b78;
+  --page: #f4f6f8;
+  --placeholder: #dde3e8;
+}
+
+.theme-nbl {
+  --header-top: #5a1119;
+  --header-bottom: #2a070c;
+  --header-angle: 160deg;
+  --header-divider: rgba(232, 160, 160, .45);
+  --header-label: #e8a0a0;
+  --header-link: #f0cdcd;
+  --accent: #c00000;
+  --accent-hover: #b80000;
+  --heading: #2a070c;
+  --copy: #4a3d3e;
+  --muted: #7a6a6c;
+  --muted-strong: #6b5a5c;
+  --page: #f7f4f4;
+  --placeholder: #e6dcdc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--copy);
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+a { color: inherit; text-decoration: none; }
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Header */
+
+.league-header {
+  background: linear-gradient(var(--header-angle), var(--header-top) 0%, var(--header-bottom) 70%);
+}
+
+.league-header__inner {
+  display: flex;
+  max-width: var(--content-max);
+  height: 120px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+.league-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-width: 0;
+}
+
+.league-header__logo {
+  display: block;
+  width: 64px;
+  height: 72px;
+  flex: none;
+  object-fit: contain;
+}
+
+/* Until the client supplies logo files, keep the slot visible. */
+div.league-header__logo {
+  border: 1px dashed var(--header-divider);
+  border-radius: 4px;
+}
+
+.league-header__divider {
+  width: 2px;
+  height: 48px;
+  flex: none;
+  background: var(--header-divider);
+}
+
+.league-header__names {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.league-header__title {
+  margin: 0;
+  color: #fff;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.league-header__full-name {
+  color: var(--header-label);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+.league-header__back {
+  flex: none;
+  color: var(--header-link);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transition: color .2s ease;
+}
+
+.league-header__back:hover,
+.league-header__back:focus-visible { color: #fff; }
+
+/* Articles */
+
+.articles {
+  display: flex;
+  max-width: var(--content-max);
+  flex-direction: column;
+  gap: 40px;
+  margin: 0 auto;
+  padding: 56px 64px 72px;
+}
+
+.articles__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--heading);
+}
+
+.articles__title {
+  margin: 0;
+  color: var(--heading);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+.articles__sort {
+  color: var(--muted-strong);
+  font-size: 15px;
+}
+
+.article-photo {
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--placeholder);
+}
+
+.article-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+
+a:hover .article-photo img,
+a:focus-visible .article-photo img { transform: scale(1.02); }
+
+.article-tag {
+  color: var(--accent);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.article-heading {
+  margin: 0;
+  color: var(--heading);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  text-wrap: pretty;
+  transition: color .2s ease;
+}
+
+a:hover .article-heading,
+a:focus-visible .article-heading { color: var(--accent-hover); }
+
+.article-date {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 40px;
+}
+
+.featured .article-photo { aspect-ratio: 16 / 9; }
+
+.featured__body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.featured .article-tag { font-size: 14px; }
+
+.featured .article-heading {
+  font-size: 44px;
+  line-height: 1.02;
+}
+
+.featured__perex {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+.card .article-photo { aspect-ratio: 16 / 10; }
+
+.card .article-tag { font-size: 13px; }
+
+.card .article-heading {
+  font-size: 26px;
+  line-height: 1.08;
+}
+
+@media (max-width: 1023px) {
+  .league-header__inner,
+  .articles { padding-right: 40px; padding-left: 40px; }
+
+  .featured { grid-template-columns: 1fr; gap: 24px; }
+  .article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 639px) {
+  .league-header__inner {
+    height: 88px;
+    padding: 0 20px;
+  }
+
+  .league-header__brand { gap: 14px; }
+  .league-header__logo { width: 44px; height: 50px; }
+  .league-header__divider { height: 36px; }
+  .league-header__title { font-size: 34px; }
+  .league-header__full-name { display: none; }
+  .league-header__back { font-size: 14px; letter-spacing: .1em; }
+
+  .articles {
+    gap: 32px;
+    padding: 36px 20px 56px;
+  }
+
+  .articles__title { font-size: 28px; }
+  .featured .article-heading { font-size: 32px; }
+  .featured__perex { font-size: 17px; }
+  .article-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-photo img,
+  .article-heading,
+  .league-header__back { transition: none; }
+}

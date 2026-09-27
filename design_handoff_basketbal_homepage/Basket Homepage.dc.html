@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #e9edf0; font-family: "Source Sans 3", "Segoe UI", sans-serif; }
+  a { color: #3c8dbc; }
+  a:hover { color: #2f7297; }
+</style>
+</helmet>
+
+<section style="padding: 40px; display: flex; flex-direction: column; gap: 28px;">
+  <div style="font-family: 'Source Sans 3', sans-serif; max-width: 760px;">
+    <h1 style="font-size: 20px; margin: 0 0 6px; color: #222222;">Varianta bez loga</h1>
+    <p style="font-size: 14px; line-height: 1.5; margin: 0; color: #5b6b78;">Vychází z <a href="#2a">2a</a>, loga jsou odstraněná a roli značky přebírá velký název ligy.</p>
+  </div>
+  <div id="4a" style="display: flex; flex-direction: column; gap: 10px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; background: #222222; color: #ffffff; padding: 3px 9px; border-radius: 3px;">4A</span>
+      <span style="font-size: 13px; color: #5b6b78;">Bez loga, typografický</span>
+    </div>
+    <div onMouseLeave="{{ v4a.leave }}" style="position: relative; width: 1120px; height: 660px; overflow: hidden; background: #07101a; border-radius: 6px; box-shadow: 0 10px 30px rgba(12,20,28,0.25);">
+      <div onMouseEnter="{{ v4a.enterA }}" style="position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(200deg, #12304e 0%, #0a1b2c 70%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 22px; padding: 96px 72px 56px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v4a.aOp }}; filter: {{ v4a.aFx }};">
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: 0.28em; color: #6fb3dc; text-transform: uppercase;">Zámoří</div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 168px; line-height: 0.85; color: #ffffff; letter-spacing: -0.01em;">NBA</div>
+        <div style="width: 54px; height: 2px; background: rgba(111,179,220,0.55);"></div>
+        <div style="font-size: 17px; line-height: 1.5; color: #b9cddd; max-width: 320px;">Výsledky, statistiky hráčů a noční přenosy v českém čase.</div>
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #3c8dbc; color: #ffffff; padding: 12px 28px; border-radius: 3px; cursor: pointer; white-space: nowrap;" style-hover="background: #2f7297;">Vstoupit do NBA</span>
+      </div>
+      <div onMouseEnter="{{ v4a.enterB }}" style="position: absolute; right: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(160deg, #5a1119 0%, #2a070c 70%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 22px; padding: 96px 72px 56px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v4a.bOp }}; filter: {{ v4a.bFx }};">
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: 0.28em; color: #e8a0a0; text-transform: uppercase;">Česko</div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 168px; line-height: 0.85; color: #ffffff; letter-spacing: -0.01em;">NBL</div>
+        <div style="width: 54px; height: 2px; background: rgba(232,160,160,0.55);"></div>
+        <div style="font-size: 17px; line-height: 1.5; color: #f0cdcd; max-width: 320px;">Tabulky, soupisky, přestupy a play-off české ligy.</div>
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #e40000; color: #ffffff; padding: 12px 28px; border-radius: 3px; cursor: pointer; white-space: nowrap;" style-hover="background: #b80000;">Vstoupit do NBL</span>
+      </div>
+      <div style="position: absolute; left: 50%; top: 110px; bottom: 0; width: 2px; margin-left: -1px; background: rgba(255,255,255,0.16);"></div>
+      <div style="position: absolute; left: 0; right: 0; top: 42px; display: flex; flex-direction: column; align-items: center; gap: 4px; pointer-events: none;">
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.34em; color: #ffffff; text-transform: uppercase;">Basketbal</div>
+        <div style="font-size: 13px; letter-spacing: 0.16em; color: rgba(255,255,255,0.55); text-transform: uppercase;">dvě ligy, jeden web</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 40px; display: flex; flex-direction: column; gap: 28px;">
+  <div style="font-family: 'Source Sans 3', sans-serif; max-width: 760px;">
+    <h1 style="font-size: 20px; margin: 0 0 6px; color: #222222;">Další rozpracování <a href="#2a">2a</a> — umístění loga v půlce</h1>
+    <p style="font-size: 14px; line-height: 1.5; margin: 0; color: #5b6b78;">Každá liga má své logo jen ve své polovině. <a href="#3a">3a</a> logo v horním rohu, text dole, <a href="#3b">3b</a> velké logo jako vodoznak na pozadí, <a href="#3c">3c</a> logo v řádku vedle textu.</p>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 32px;">
+
+    <div id="3a" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; background: #222222; color: #ffffff; padding: 3px 9px; border-radius: 3px;">3A</span>
+        <span style="font-size: 13px; color: #5b6b78;">Logo v horním rohu, obsah dole</span>
+      </div>
+      <div onMouseLeave="{{ v3a.leave }}" style="position: relative; width: 1120px; height: 660px; overflow: hidden; background: #07101a; border-radius: 6px; box-shadow: 0 10px 30px rgba(12,20,28,0.25);">
+        <div onMouseEnter="{{ v3a.enterA }}" style="position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(200deg, #12304e 0%, #0a1b2c 70%); display: flex; flex-direction: column; justify-content: space-between; padding: 56px 0 72px 68px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v3a.aOp }}; filter: {{ v3a.aFx }};">
+          <div style="width: 170px; height: 90px;"><image-slot id="s3a-nba" shape="rect" fit="contain" placeholder="Logo NBA"></image-slot></div>
+          <div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.24em; color: #6fb3dc; text-transform: uppercase;">Zámoří</div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 100px; line-height: 0.95; color: #ffffff;">NBA</div>
+            <div style="font-size: 17px; line-height: 1.5; color: #b9cddd; max-width: 320px; margin-top: 12px;">Výsledky, statistiky hráčů a noční přenosy v českém čase.</div>
+            <div style="margin-top: 26px;"><span style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #3c8dbc; color: #ffffff; padding: 12px 28px; border-radius: 3px; cursor: pointer;" style-hover="background: #2f7297;">Vstoupit do NBA</span></div>
+          </div>
+        </div>
+        <div onMouseEnter="{{ v3a.enterB }}" style="position: absolute; right: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(160deg, #5a1119 0%, #2a070c 70%); display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; text-align: right; padding: 56px 68px 72px 0; transition: opacity .35s ease, filter .35s ease; opacity: {{ v3a.bOp }}; filter: {{ v3a.bFx }};">
+          <div style="width: 170px; height: 90px;"><image-slot id="s3a-nbl" shape="rect" fit="contain" placeholder="Logo NBL"></image-slot></div>
+          <div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.24em; color: #e8a0a0; text-transform: uppercase;">Česko</div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 100px; line-height: 0.95; color: #ffffff;">NBL</div>
+            <div style="font-size: 17px; line-height: 1.5; color: #f0cdcd; max-width: 320px; margin-top: 12px;">Tabulky, soupisky, přestupy a play-off české ligy.</div>
+            <div style="margin-top: 26px;"><span style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #e40000; color: #ffffff; padding: 12px 28px; border-radius: 3px; cursor: pointer;" style-hover="background: #b80000;">Vstoupit do NBL</span></div>
+          </div>
+        </div>
+        <div style="position: absolute; left: 50%; top: 0; width: 2px; height: 100%; margin-left: -1px; background: rgba(255,255,255,0.16);"></div>
+        <div style="position: absolute; left: 0; right: 0; top: 62px; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.34em; color: rgba(255,255,255,0.85); text-transform: uppercase; pointer-events: none;">Basketbal</div>
+      </div>
+    </div>
+
+    <div id="3b" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; background: #222222; color: #ffffff; padding: 3px 9px; border-radius: 3px;">3B</span>
+        <span style="font-size: 13px; color: #5b6b78;">Logo jako velký vodoznak na pozadí</span>
+      </div>
+      <div onMouseLeave="{{ v3b.leave }}" style="position: relative; width: 1120px; height: 660px; overflow: hidden; background: #07101a; border-radius: 6px; box-shadow: 0 10px 30px rgba(12,20,28,0.25);">
+        <div onMouseEnter="{{ v3b.enterA }}" style="position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(200deg, #12304e 0%, #0a1b2c 70%); transition: opacity .35s ease, filter .35s ease; opacity: {{ v3b.aOp }}; filter: {{ v3b.aFx }};">
+          <div style="position: absolute; left: 40px; top: 50%; width: 420px; height: 420px; margin-top: -210px; opacity: 0.16;"><image-slot id="s3b-nba" shape="rect" fit="contain" placeholder="Logo NBA"></image-slot></div>
+          <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 0 78px 68px; pointer-events: none;">
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.24em; color: #6fb3dc; text-transform: uppercase;">Zámoří</div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 104px; line-height: 0.95; color: #ffffff;">NBA</div>
+            <div style="font-size: 17px; line-height: 1.5; color: #cfe0ec; max-width: 320px; margin-top: 12px;">Výsledky, statistiky hráčů a noční přenosy v českém čase.</div>
+            <div style="margin-top: 26px;"><span style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #3c8dbc; color: #ffffff; padding: 12px 28px; border-radius: 3px; cursor: pointer; pointer-events: auto;" style-hover="background: #2f7297;">Vstoupit do NBA</span></div>
+          </div>
+        </div>
+        <div onMouseEnter="{{ v3b.enterB }}" style="position: absolute; right: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(160deg, #5a1119 0%, #2a070c 70%); transition: opacity .35s ease, filter .35s ease; opacity: {{ v3b.bOp }}; filter: {{ v3b.bFx }};">
+          <div style="position: absolute; right: 40px; top: 50%; width: 420px; height: 420px; margin-top: -210px; opacity: 0.16;"><image-slot id="s3b-nbl" shape="rect" fit="contain" placeholder="Logo NBL"></image-slot></div>
+          <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end; text-align: right; padding: 0 68px 78px 0; pointer-events: none;">
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.24em; color: #e8a0a0; text-transform: uppercase;">Česko</div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 104px; line-height: 0.95; color: #ffffff;">NBL</div>
+            <div style="font-size: 17px; line-height: 1.5; color: #f5dada; max-width: 320px; margin-top: 12px;">Tabulky, soupisky, přestupy a play-off české ligy.</div>
+            <div style="margin-top: 26px;"><span style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #e40000; color: #ffffff; padding: 12px 28px; border-radius: 3px; cursor: pointer; pointer-events: auto;" style-hover="background: #b80000;">Vstoupit do NBL</span></div>
+          </div>
+        </div>
+        <div style="position: absolute; left: 50%; top: 0; width: 2px; height: 100%; margin-left: -1px; background: rgba(255,255,255,0.16);"></div>
+        <div style="position: absolute; left: 0; right: 0; top: 56px; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.34em; color: rgba(255,255,255,0.85); text-transform: uppercase; pointer-events: none;">Basketbal</div>
+      </div>
+    </div>
+
+    <div id="3c" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; background: #222222; color: #ffffff; padding: 3px 9px; border-radius: 3px;">3C</span>
+        <span style="font-size: 13px; color: #5b6b78;">Logo v řádku vedle názvu ligy</span>
+      </div>
+      <div onMouseLeave="{{ v3c.leave }}" style="position: relative; width: 1120px; height: 660px; overflow: hidden; background: #07101a; border-radius: 6px; box-shadow: 0 10px 30px rgba(12,20,28,0.25);">
+        <div onMouseEnter="{{ v3c.enterA }}" style="position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(200deg, #12304e 0%, #0a1b2c 70%); display: flex; flex-direction: column; justify-content: center; gap: 26px; padding: 0 56px 0 68px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v3c.aOp }}; filter: {{ v3c.aFx }};">
+          <div style="display: flex; align-items: center; gap: 24px;">
+            <div style="width: 120px; height: 120px; flex: none;"><image-slot id="s3c-nba" shape="rect" fit="contain" placeholder="Logo NBA"></image-slot></div>
+            <div style="min-width: 0;">
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.24em; color: #6fb3dc; text-transform: uppercase;">Zámoří</div>
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 82px; line-height: 1; color: #ffffff;">NBA</div>
+            </div>
+          </div>
+          <div style="height: 1px; background: rgba(255,255,255,0.18);"></div>
+          <div style="font-size: 17px; line-height: 1.55; color: #b9cddd; max-width: 340px;">Výsledky, statistiky hráčů, tabulka konferencí a noční přenosy v českém čase.</div>
+          <div><span style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #3c8dbc; color: #ffffff; padding: 12px 28px; border-radius: 3px; cursor: pointer;" style-hover="background: #2f7297;">Vstoupit do NBA</span></div>
+        </div>
+        <div onMouseEnter="{{ v3c.enterB }}" style="position: absolute; right: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(160deg, #5a1119 0%, #2a070c 70%); display: flex; flex-direction: column; align-items: flex-end; justify-content: center; text-align: right; gap: 26px; padding: 0 68px 0 56px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v3c.bOp }}; filter: {{ v3c.bFx }};">
+          <div style="display: flex; align-items: center; gap: 24px;">
+            <div style="min-width: 0;">
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.24em; color: #e8a0a0; text-transform: uppercase;">Česko</div>
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 82px; line-height: 1; color: #ffffff;">NBL</div>
+            </div>
+            <div style="width: 120px; height: 120px; flex: none;"><image-slot id="s3c-nbl" shape="rect" fit="contain" placeholder="Logo NBL"></image-slot></div>
+          </div>
+          <div style="height: 1px; background: rgba(255,255,255,0.18); align-self: stretch;"></div>
+          <div style="font-size: 17px; line-height: 1.55; color: #f0cdcd; max-width: 340px;">Tabulky, soupisky, přestupy a play-off Národní basketbalové ligy.</div>
+          <div><span style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #e40000; color: #ffffff; padding: 12px 28px; border-radius: 3px; cursor: pointer;" style-hover="background: #b80000;">Vstoupit do NBL</span></div>
+        </div>
+        <div style="position: absolute; left: 50%; top: 0; width: 2px; height: 100%; margin-left: -1px; background: rgba(255,255,255,0.16);"></div>
+        <div style="position: absolute; left: 0; right: 0; bottom: 38px; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.34em; color: rgba(255,255,255,0.7); text-transform: uppercase; pointer-events: none;">Basketbal</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="padding: 40px; display: flex; flex-direction: column; gap: 28px;">
+  <div style="font-family: 'Source Sans 3', sans-serif; max-width: 760px;">
+    <h1 style="font-size: 20px; margin: 0 0 6px; color: #222222;">Loga celá, bez řezání — tři varianty</h1>
+    <p style="font-size: 14px; line-height: 1.5; margin: 0; color: #5b6b78;">Rozdělení stránky je jako u <a href="#1a">1a</a>. <a href="#2a">2a</a> logo samostatně v každé polovině, bez překryvu, <a href="#2b">2b</a> společná deska se švem, <a href="#2c">2c</a> natočené dlaždice přes sebe.</p>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 32px;">
+
+    <div id="2a" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; background: #222222; color: #ffffff; padding: 3px 9px; border-radius: 3px;">2A</span>
+        <span style="font-size: 13px; color: #5b6b78;">Logo v každé polovině, bez překryvu</span>
+      </div>
+      <div onMouseLeave="{{ v2a.leave }}" style="position: relative; width: 1120px; height: 660px; overflow: hidden; background: #07101a; border-radius: 6px; box-shadow: 0 10px 30px rgba(12,20,28,0.25);">
+        <div onMouseEnter="{{ v2a.enterA }}" style="position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(200deg, #12304e 0%, #0a1b2c 70%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 22px; padding: 110px 72px 64px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v2a.aOp }}; filter: {{ v2a.aFx }};">
+          <div style="width: 300px; height: 150px;"><image-slot id="s2a-nba" shape="rect" fit="contain" placeholder="Logo NBA"></image-slot></div>
+          <div style="width: 54px; height: 2px; background: rgba(111,179,220,0.55);"></div>
+          <div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.24em; color: #6fb3dc; text-transform: uppercase;">Zámoří</div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 84px; line-height: 1; color: #ffffff;">NBA</div>
+            <div style="font-size: 17px; line-height: 1.5; color: #b9cddd; max-width: 320px; margin: 10px auto 0;">Výsledky, statistiky hráčů a noční přenosy v českém čase.</div>
+          </div>
+          <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #3c8dbc; color: #ffffff; padding: 12px 28px; border-radius: 3px; cursor: pointer;" style-hover="background: #2f7297;">Vstoupit do NBA</span>
+        </div>
+        <div onMouseEnter="{{ v2a.enterB }}" style="position: absolute; right: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(160deg, #5a1119 0%, #2a070c 70%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 22px; padding: 110px 72px 64px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v2a.bOp }}; filter: {{ v2a.bFx }};">
+          <div style="width: 300px; height: 150px;"><image-slot id="s2a-nbl" shape="rect" fit="contain" placeholder="Logo NBL"></image-slot></div>
+          <div style="width: 54px; height: 2px; background: rgba(232,160,160,0.55);"></div>
+          <div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.24em; color: #e8a0a0; text-transform: uppercase;">Česko</div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 84px; line-height: 1; color: #ffffff;">NBL</div>
+            <div style="font-size: 17px; line-height: 1.5; color: #f0cdcd; max-width: 320px; margin: 10px auto 0;">Tabulky, soupisky, přestupy a play-off české ligy.</div>
+          </div>
+          <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #e40000; color: #ffffff; padding: 12px 28px; border-radius: 3px; cursor: pointer;" style-hover="background: #b80000;">Vstoupit do NBL</span>
+        </div>
+        <div style="position: absolute; left: 50%; top: 0; width: 2px; height: 100%; margin-left: -1px; background: rgba(255,255,255,0.16);"></div>
+        <div style="position: absolute; left: 0; right: 0; top: 46px; display: flex; flex-direction: column; align-items: center; gap: 4px; pointer-events: none;">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.34em; color: #ffffff; text-transform: uppercase;">Basketbal</div>
+          <div style="font-size: 13px; letter-spacing: 0.16em; color: rgba(255,255,255,0.55); text-transform: uppercase;">dvě ligy, jeden web</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="2b" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; background: #222222; color: #ffffff; padding: 3px 9px; border-radius: 3px;">2B</span>
+        <span style="font-size: 13px; color: #5b6b78;">Společná deska rozdělená švem</span>
+      </div>
+      <div onMouseLeave="{{ v2b.leave }}" style="position: relative; width: 1120px; height: 660px; overflow: hidden; background: #07101a; border-radius: 6px; box-shadow: 0 10px 30px rgba(12,20,28,0.25);">
+        <div onMouseEnter="{{ v2b.enterA }}" style="position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(200deg, #12304e 0%, #0a1b2c 70%); display: flex; flex-direction: column; justify-content: flex-end; padding: 0 0 72px 68px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v2b.aOp }}; filter: {{ v2b.aFx }};">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.24em; color: #6fb3dc; text-transform: uppercase;">Zámoří</div>
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 96px; line-height: 0.95; color: #ffffff;">NBA</div>
+          <div style="font-size: 17px; line-height: 1.5; color: #b9cddd; max-width: 300px; margin-top: 10px;">Výsledky, statistiky hráčů a noční přenosy v českém čase.</div>
+          <div style="margin-top: 24px;"><span style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #3c8dbc; color: #ffffff; padding: 12px 26px; border-radius: 3px; cursor: pointer;" style-hover="background: #2f7297;">Vstoupit do NBA</span></div>
+        </div>
+        <div onMouseEnter="{{ v2b.enterB }}" style="position: absolute; right: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(160deg, #5a1119 0%, #2a070c 70%); display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; text-align: right; padding: 0 68px 72px 0; transition: opacity .35s ease, filter .35s ease; opacity: {{ v2b.bOp }}; filter: {{ v2b.bFx }};">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.24em; color: #e8a0a0; text-transform: uppercase;">Česko</div>
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 96px; line-height: 0.95; color: #ffffff;">NBL</div>
+          <div style="font-size: 17px; line-height: 1.5; color: #f0cdcd; max-width: 300px; margin-top: 10px;">Tabulky, soupisky, přestupy a play-off české ligy.</div>
+          <div style="margin-top: 24px;"><span style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #e40000; color: #ffffff; padding: 12px 26px; border-radius: 3px; cursor: pointer;" style-hover="background: #b80000;">Vstoupit do NBL</span></div>
+        </div>
+        <div style="position: absolute; left: 0; right: 0; top: 46px; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.34em; color: #ffffff; text-transform: uppercase; pointer-events: none;">Basketbal</div>
+        <div style="position: absolute; left: 50%; top: 50%; width: 560px; height: 240px; margin: -150px 0 0 -280px; display: flex; background: #ffffff; border-radius: 6px; overflow: hidden; box-shadow: 0 0 0 10px rgba(7,16,26,0.75), 0 22px 44px rgba(0,0,0,0.5);">
+          <div onMouseEnter="{{ v2b.enterA }}" style="flex: 1; min-width: 0; padding: 34px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v2b.aOp }}; filter: {{ v2b.aFx }};">
+            <image-slot id="s2b-nba" shape="rect" fit="contain" placeholder="Logo NBA"></image-slot>
+          </div>
+          <div style="width: 2px; background: #dbdbdb;"></div>
+          <div onMouseEnter="{{ v2b.enterB }}" style="flex: 1; min-width: 0; padding: 34px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v2b.bOp }}; filter: {{ v2b.bFx }};">
+            <image-slot id="s2b-nbl" shape="rect" fit="contain" placeholder="Logo NBL"></image-slot>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="2c" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; background: #222222; color: #ffffff; padding: 3px 9px; border-radius: 3px;">2C</span>
+        <span style="font-size: 13px; color: #5b6b78;">Natočené dlaždice přes sebe</span>
+      </div>
+      <div onMouseLeave="{{ v2c.leave }}" style="position: relative; width: 1120px; height: 660px; overflow: hidden; background: #07101a; border-radius: 6px; box-shadow: 0 10px 30px rgba(12,20,28,0.25);">
+        <div onMouseEnter="{{ v2c.enterA }}" style="position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(200deg, #12304e 0%, #0a1b2c 70%); display: flex; flex-direction: column; justify-content: flex-end; padding: 0 0 72px 68px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v2c.aOp }}; filter: {{ v2c.aFx }};">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.24em; color: #6fb3dc; text-transform: uppercase;">Zámoří</div>
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 96px; line-height: 0.95; color: #ffffff;">NBA</div>
+          <div style="font-size: 17px; line-height: 1.5; color: #b9cddd; max-width: 300px; margin-top: 10px;">Výsledky, statistiky hráčů a noční přenosy v českém čase.</div>
+          <div style="margin-top: 24px;"><span style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #3c8dbc; color: #ffffff; padding: 12px 26px; border-radius: 3px; cursor: pointer;" style-hover="background: #2f7297;">Vstoupit do NBA</span></div>
+        </div>
+        <div onMouseEnter="{{ v2c.enterB }}" style="position: absolute; right: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(160deg, #5a1119 0%, #2a070c 70%); display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; text-align: right; padding: 0 68px 72px 0; transition: opacity .35s ease, filter .35s ease; opacity: {{ v2c.bOp }}; filter: {{ v2c.bFx }};">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.24em; color: #e8a0a0; text-transform: uppercase;">Česko</div>
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 96px; line-height: 0.95; color: #ffffff;">NBL</div>
+          <div style="font-size: 17px; line-height: 1.5; color: #f0cdcd; max-width: 300px; margin-top: 10px;">Tabulky, soupisky, přestupy a play-off české ligy.</div>
+          <div style="margin-top: 24px;"><span style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #e40000; color: #ffffff; padding: 12px 26px; border-radius: 3px; cursor: pointer;" style-hover="background: #b80000;">Vstoupit do NBL</span></div>
+        </div>
+        <div style="position: absolute; left: 50%; top: 0; width: 2px; height: 100%; margin-left: -1px; background: rgba(255,255,255,0.16);"></div>
+        <div style="position: absolute; left: 0; right: 0; top: 46px; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.34em; color: #ffffff; text-transform: uppercase; pointer-events: none;">Basketbal</div>
+        <div style="position: absolute; left: 50%; top: 50%; width: 420px; height: 250px; margin: -150px 0 0 -210px;">
+          <div onMouseEnter="{{ v2c.enterA }}" style="position: absolute; left: 0; top: 14px; width: 220px; height: 220px; background: #ffffff; border-radius: 8px; padding: 30px; transform: rotate(-5deg); box-shadow: 0 18px 38px rgba(0,0,0,0.5); transition: opacity .35s ease, filter .35s ease; opacity: {{ v2c.aOp }}; filter: {{ v2c.aFx }};">
+            <image-slot id="s2c-nba" shape="rect" fit="contain" placeholder="Logo NBA"></image-slot>
+          </div>
+          <div onMouseEnter="{{ v2c.enterB }}" style="position: absolute; right: 0; top: 14px; width: 220px; height: 220px; background: #ffffff; border-radius: 8px; padding: 30px; transform: rotate(5deg); box-shadow: 0 18px 38px rgba(0,0,0,0.5), 0 0 0 5px rgba(7,16,26,0.85); transition: opacity .35s ease, filter .35s ease; opacity: {{ v2c.bOp }}; filter: {{ v2c.bFx }};">
+            <image-slot id="s2c-nbl" shape="rect" fit="contain" placeholder="Logo NBL"></image-slot>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="padding: 40px; display: flex; flex-direction: column; gap: 28px;">
+  <div style="font-family: 'Source Sans 3', sans-serif; max-width: 760px;">
+    <h1 style="font-size: 20px; margin: 0 0 6px; color: #222222;">Úvodní rozcestník — tři návrhy dělení</h1>
+    <p style="font-size: 14px; line-height: 1.5; margin: 0; color: #5b6b78;">Najetím myší na jednu stranu se druhá ztlumí. Loga se do medailonu vkládají přetažením souboru — viz poznámka v chatu. Varianty: <a href="#1a">1a</a> svislé dělení / kruh na polovinu, <a href="#1b">1b</a> šikmý šev / kruh vodorovně, <a href="#1c">1c</a> vodorovné dělení / diagonální kosočtverec.</p>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 32px;">
+
+    <div id="1a" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; background: #222222; color: #ffffff; padding: 3px 9px; border-radius: 3px;">1A</span>
+        <span style="font-size: 13px; color: #5b6b78;">Svislé dělení, medailon rozříznutý svisle</span>
+      </div>
+      <div onMouseLeave="{{ v1a.leave }}" style="position: relative; width: 1120px; height: 660px; overflow: hidden; background: #07101a; border-radius: 6px; box-shadow: 0 10px 30px rgba(12,20,28,0.25);">
+        <div onMouseEnter="{{ v1a.enterA }}" style="position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(200deg, #12304e 0%, #0a1b2c 70%); display: flex; flex-direction: column; justify-content: flex-end; padding: 0 0 78px 68px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v1a.aOp }}; filter: {{ v1a.aFx }};">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.24em; color: #6fb3dc; text-transform: uppercase;">Zámoří</div>
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 104px; line-height: 0.92; color: #ffffff; letter-spacing: -0.01em;">NBA</div>
+          <div style="font-size: 17px; line-height: 1.5; color: #b9cddd; max-width: 330px; margin-top: 12px;">Výsledky, statistiky hráčů, přenosy a noční zápasy v českém čase.</div>
+          <div style="margin-top: 26px; display: flex; gap: 12px;">
+            <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #3c8dbc; color: #ffffff; padding: 12px 26px; border-radius: 3px; cursor: pointer;" style-hover="background: #2f7297;">Vstoupit do NBA</span>
+          </div>
+        </div>
+        <div onMouseEnter="{{ v1a.enterB }}" style="position: absolute; right: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(160deg, #5a1119 0%, #2a070c 70%); display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; text-align: right; padding: 0 68px 78px 0; transition: opacity .35s ease, filter .35s ease; opacity: {{ v1a.bOp }}; filter: {{ v1a.bFx }};">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.24em; color: #e8a0a0; text-transform: uppercase;">Česko</div>
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 104px; line-height: 0.92; color: #ffffff; letter-spacing: -0.01em;">NBL</div>
+          <div style="font-size: 17px; line-height: 1.5; color: #f0cdcd; max-width: 330px; margin-top: 12px;">Národní basketbalová liga — tabulky, soupisky, přestupy a play-off.</div>
+          <div style="margin-top: 26px; display: flex; gap: 12px;">
+            <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; background: #e40000; color: #ffffff; padding: 12px 26px; border-radius: 3px; cursor: pointer;" style-hover="background: #b80000;">Vstoupit do NBL</span>
+          </div>
+        </div>
+        <div style="position: absolute; left: 50%; top: 0; width: 2px; height: 100%; margin-left: -1px; background: rgba(255,255,255,0.16);"></div>
+        <div style="position: absolute; left: 0; right: 0; top: 46px; display: flex; flex-direction: column; align-items: center; gap: 4px; pointer-events: none;">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.34em; color: #ffffff; text-transform: uppercase;">Basketbal</div>
+          <div style="font-size: 13px; letter-spacing: 0.16em; color: rgba(255,255,255,0.55); text-transform: uppercase;">dvě ligy, jeden web</div>
+        </div>
+        <div style="position: absolute; left: 50%; top: 50%; width: 300px; height: 300px; margin: -170px 0 0 -150px;">
+          <div style="position: absolute; inset: 0; border-radius: 50%; background: #ffffff; box-shadow: 0 0 0 10px rgba(255,255,255,0.10), 0 22px 44px rgba(0,0,0,0.45);"></div>
+          <div onMouseEnter="{{ v1a.enterA }}" style="position: absolute; left: 0; top: 0; width: 150px; height: 300px; overflow: hidden; border-radius: 150px 0 0 150px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v1a.aOp }}; filter: {{ v1a.aFx }};">
+            <div style="position: absolute; left: 0; top: 0; width: 300px; height: 300px;"><image-slot id="s1a-nba" shape="rect" fit="contain" placeholder="Logo NBA"></image-slot></div>
+          </div>
+          <div onMouseEnter="{{ v1a.enterB }}" style="position: absolute; right: 0; top: 0; width: 150px; height: 300px; overflow: hidden; border-radius: 0 150px 150px 0; transition: opacity .35s ease, filter .35s ease; opacity: {{ v1a.bOp }}; filter: {{ v1a.bFx }};">
+            <div style="position: absolute; right: 0; top: 0; width: 300px; height: 300px;"><image-slot id="s1a-nbl" shape="rect" fit="contain" placeholder="Logo NBL"></image-slot></div>
+          </div>
+          <div style="position: absolute; left: 149px; top: 0; width: 2px; height: 100%; background: rgba(7,16,26,0.35); pointer-events: none;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="1b" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; background: #222222; color: #ffffff; padding: 3px 9px; border-radius: 3px;">1B</span>
+        <span style="font-size: 13px; color: #5b6b78;">Šikmý šev, medailon rozříznutý vodorovně</span>
+      </div>
+      <div onMouseLeave="{{ v1b.leave }}" style="position: relative; width: 1120px; height: 660px; overflow: hidden; background: #07101a; border-radius: 6px; box-shadow: 0 10px 30px rgba(12,20,28,0.25);">
+        <div onMouseEnter="{{ v1b.enterA }}" style="position: absolute; inset: 0; clip-path: polygon(0 0, 58% 0, 42% 100%, 0 100%); background: linear-gradient(200deg, #12304e 0%, #0a1b2c 70%); display: flex; flex-direction: column; justify-content: center; padding: 0 0 0 76px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v1b.aOp }}; filter: {{ v1b.aFx }};">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.24em; color: #6fb3dc; text-transform: uppercase;">Zámoří</div>
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 112px; line-height: 0.92; color: #ffffff;">NBA</div>
+          <div style="font-size: 17px; line-height: 1.5; color: #b9cddd; max-width: 290px; margin-top: 12px;">Výsledky, statistiky a přenosy z nejlepší ligy světa.</div>
+          <div style="margin-top: 26px;"><span style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; border: 2px solid #3c8dbc; color: #9ed2f0; padding: 11px 24px; border-radius: 3px; cursor: pointer;" style-hover="background: #3c8dbc; color: #ffffff;">Vstoupit do NBA</span></div>
+        </div>
+        <div onMouseEnter="{{ v1b.enterB }}" style="position: absolute; inset: 0; clip-path: polygon(58% 0, 100% 0, 100% 100%, 42% 100%); background: linear-gradient(160deg, #5a1119 0%, #2a070c 70%); display: flex; flex-direction: column; justify-content: center; align-items: flex-end; text-align: right; padding: 0 76px 0 0; transition: opacity .35s ease, filter .35s ease; opacity: {{ v1b.bOp }}; filter: {{ v1b.bFx }};">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.24em; color: #e8a0a0; text-transform: uppercase;">Česko</div>
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 112px; line-height: 0.92; color: #ffffff;">NBL</div>
+          <div style="font-size: 17px; line-height: 1.5; color: #f0cdcd; max-width: 290px; margin-top: 12px;">Tabulky, soupisky a play-off Národní basketbalové ligy.</div>
+          <div style="margin-top: 26px;"><span style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; border: 2px solid #e40000; color: #ff9d9d; padding: 11px 24px; border-radius: 3px; cursor: pointer;" style-hover="background: #e40000; color: #ffffff;">Vstoupit do NBL</span></div>
+        </div>
+        <div style="position: absolute; left: 50%; top: 50%; width: 300px; height: 300px; margin: -150px 0 0 -150px;">
+          <div style="position: absolute; inset: 0; border-radius: 50%; background: #ffffff; box-shadow: 0 0 0 12px rgba(7,16,26,0.75), 0 22px 44px rgba(0,0,0,0.5);"></div>
+          <div onMouseEnter="{{ v1b.enterA }}" style="position: absolute; left: 0; top: 0; width: 300px; height: 150px; overflow: hidden; border-radius: 150px 150px 0 0; transition: opacity .35s ease, filter .35s ease; opacity: {{ v1b.aOp }}; filter: {{ v1b.aFx }};">
+            <div style="position: absolute; left: 0; top: 0; width: 300px; height: 300px;"><image-slot id="s1b-nba" shape="rect" fit="contain" placeholder="Logo NBA"></image-slot></div>
+          </div>
+          <div onMouseEnter="{{ v1b.enterB }}" style="position: absolute; left: 0; bottom: 0; width: 300px; height: 150px; overflow: hidden; border-radius: 0 0 150px 150px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v1b.bOp }}; filter: {{ v1b.bFx }};">
+            <div style="position: absolute; left: 0; bottom: 0; width: 300px; height: 300px;"><image-slot id="s1b-nbl" shape="rect" fit="contain" placeholder="Logo NBL"></image-slot></div>
+          </div>
+          <div style="position: absolute; left: 0; top: 149px; width: 100%; height: 2px; background: rgba(7,16,26,0.35); pointer-events: none;"></div>
+        </div>
+        <div style="position: absolute; left: 0; right: 0; bottom: 34px; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.34em; color: rgba(255,255,255,0.7); text-transform: uppercase; pointer-events: none;">Basketbal</div>
+      </div>
+    </div>
+
+    <div id="1c" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; background: #222222; color: #ffffff; padding: 3px 9px; border-radius: 3px;">1C</span>
+        <span style="font-size: 13px; color: #5b6b78;">Vodorovné dělení, kosočtverec dělený diagonálou</span>
+      </div>
+      <div onMouseLeave="{{ v1c.leave }}" style="position: relative; width: 1120px; height: 660px; overflow: hidden; background: #07101a; border-radius: 6px; box-shadow: 0 10px 30px rgba(12,20,28,0.25);">
+        <div onMouseEnter="{{ v1c.enterA }}" style="position: absolute; left: 0; top: 0; width: 100%; height: 50%; background: linear-gradient(120deg, #12304e 0%, #0a1b2c 80%); display: flex; align-items: center; padding: 0 76px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v1c.aOp }}; filter: {{ v1c.aFx }};">
+          <div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.24em; color: #6fb3dc; text-transform: uppercase;">Zámoří</div>
+            <div style="display: flex; align-items: baseline; gap: 20px;">
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 86px; line-height: 1; color: #ffffff;">NBA</div>
+              <div style="font-size: 16px; line-height: 1.5; color: #b9cddd; max-width: 300px;">Výsledky, statistiky a noční přenosy v českém čase.</div>
+            </div>
+            <div style="margin-top: 20px;"><span style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; background: #3c8dbc; color: #ffffff; padding: 11px 24px; border-radius: 3px; cursor: pointer;" style-hover="background: #2f7297;">Vstoupit do NBA</span></div>
+          </div>
+        </div>
+        <div onMouseEnter="{{ v1c.enterB }}" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 50%; background: linear-gradient(300deg, #5a1119 0%, #2a070c 80%); display: flex; align-items: center; justify-content: flex-end; text-align: right; padding: 0 76px; transition: opacity .35s ease, filter .35s ease; opacity: {{ v1c.bOp }}; filter: {{ v1c.bFx }};">
+          <div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.24em; color: #e8a0a0; text-transform: uppercase;">Česko</div>
+            <div style="display: flex; align-items: baseline; gap: 20px; justify-content: flex-end;">
+              <div style="font-size: 16px; line-height: 1.5; color: #f0cdcd; max-width: 300px;">Tabulky, soupisky, přestupy a play-off české NBL.</div>
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 86px; line-height: 1; color: #ffffff;">NBL</div>
+            </div>
+            <div style="margin-top: 20px;"><span style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; background: #e40000; color: #ffffff; padding: 11px 24px; border-radius: 3px; cursor: pointer;" style-hover="background: #b80000;">Vstoupit do NBL</span></div>
+          </div>
+        </div>
+        <div style="position: absolute; left: 0; top: 50%; width: 100%; height: 2px; margin-top: -1px; background: rgba(255,255,255,0.16);"></div>
+        <div style="position: absolute; left: 50%; top: 50%; width: 320px; height: 320px; margin: -160px 0 0 -160px; transform: rotate(45deg); border-radius: 22px; overflow: hidden; background: #ffffff; box-shadow: 0 0 0 12px rgba(7,16,26,0.8), 0 22px 44px rgba(0,0,0,0.5);">
+          <div onMouseEnter="{{ v1c.enterA }}" style="position: absolute; inset: 0; clip-path: polygon(0 0, 100% 0, 0 100%); transition: opacity .35s ease, filter .35s ease; opacity: {{ v1c.aOp }}; filter: {{ v1c.aFx }};">
+            <div style="position: absolute; inset: 0; transform: rotate(-45deg);"><image-slot id="s1c-nba" shape="rect" fit="contain" placeholder="Logo NBA"></image-slot></div>
+          </div>
+          <div onMouseEnter="{{ v1c.enterB }}" style="position: absolute; inset: 0; clip-path: polygon(100% 0, 100% 100%, 0 100%); transition: opacity .35s ease, filter .35s ease; opacity: {{ v1c.bOp }}; filter: {{ v1c.bFx }};">
+            <div style="position: absolute; inset: 0; transform: rotate(-45deg);"><image-slot id="s1c-nbl" shape="rect" fit="contain" placeholder="Logo NBL"></image-slot></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;dimOpacity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.3,&quot;min&quot;:0.1,&quot;max&quot;:0.9,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Chování&quot;}}">
+class Component extends DCLogic {
+  state = { h: {} };
+  set(k, v) { this.setState(s => ({ h: Object.assign({}, s.h, { [k]: v }) })); }
+  pack(key) {
+    const dimOp = String(this.props.dimOpacity ?? 0.3);
+    const cur = this.state.h[key] || null;
+    const on = "saturate(1.05) brightness(1.02)";
+    const off = "saturate(0.2) brightness(0.72)";
+    return {
+      enterA: () => this.set(key, "a"),
+      enterB: () => this.set(key, "b"),
+      leave: () => this.set(key, null),
+      aOp: cur === "b" ? dimOp : "1",
+      bOp: cur === "a" ? dimOp : "1",
+      aFx: cur === "b" ? off : on,
+      bFx: cur === "a" ? off : on
+    };
+  }
+  renderVals() {
+    return {
+      v1a: this.pack("1a"), v1b: this.pack("1b"), v1c: this.pack("1c"),
+      v2a: this.pack("2a"), v2b: this.pack("2b"), v2c: this.pack("2c"),
+      v4a: this.pack("4a"), v3a: this.pack("3a"), v3b: this.pack("3b"), v3c: this.pack("3c")
+    };
+  }
+}
+
+</script>
+</body>
+</html>
